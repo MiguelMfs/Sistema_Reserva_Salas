@@ -92,7 +92,7 @@ Após o registro, ele notifica o *Serviço de E-mail* para enviar a confirmaçã
 
 ---
 
-### 6️⃣ Disparo de Evento no E-mail → Responsável: Miguel
+### 6️ - Disparo de Evento no E-mail → Responsável: Miguel
 *Objetivo:*  
 Gerar e enviar eventos de calendário (Google, Outlook, etc.) após a confirmação de reserva.
 
