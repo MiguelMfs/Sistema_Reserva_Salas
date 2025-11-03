@@ -8,7 +8,7 @@ Cada serviço possui *responsabilidade única*, podendo ser executado e escalado
 
 ## 🗂️ Estrutura de Microsserviços
 
-### 1️⃣ Consulta de Sala de Aula → Responsável: Guilherme
+### 1 - Consulta de Sala de Aula → Responsável: Guilherme
 *Objetivo:*  
 Gerenciar e disponibilizar os dados de todas as salas cadastradas no sistema.
 
@@ -25,7 +25,7 @@ Este microserviço armazena (em uma lista simulada) e disponibiliza informaçõe
 
 ---
 
-### 2️⃣ Verificar Disponibilidade da Sala → Responsável: Hannely
+### 2 - Verificar Disponibilidade da Sala → Responsável: Hannely
 *Objetivo:*  
 Determinar se uma sala específica está disponível em um determinado intervalo de tempo.
 
@@ -40,7 +40,7 @@ Ao receber uma requisição com o *ID da sala, **data, **hora de início e fim*,
 
 ---
 
-### 3️⃣ Disparo de Email → Responsável: Maria Antonia
+### 3️ - Disparo de Email → Responsável: Maria Antonia
 *Objetivo:*  
 Simular o envio de e-mails de confirmação de reservas.
 
@@ -57,7 +57,7 @@ Após o recebimento, o serviço imprime o conteúdo do e-mail no console e retor
 
 ---
 
-### 4️⃣ Gateway → Responsável: Rodrigo
+### 4️ - Gateway → Responsável: Rodrigo
 *Objetivo:*  
 Centralizar o acesso e a comunicação entre todos os microsserviços.
 
@@ -79,7 +79,7 @@ Ele é responsável por *rotear e orquestrar* as chamadas entre os serviços, si
 
 ---
 
-### 5️⃣ Reservar Sala → Responsável: Julia
+### 5️ - Reservar Sala → Responsável: Julia
 *Objetivo:*  
 Registrar efetivamente a reserva no sistema e acionar o disparo de e-mail.
 
