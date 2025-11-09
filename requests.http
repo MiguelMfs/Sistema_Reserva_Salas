@@ -1,0 +1,165 @@
+###
+# Gateway - Sistema de Reserva de Salas
+# Arquivo de testes HTTP
+# Use a extensão REST Client no VS Code para executar
+###
+
+### Health Check do Gateway
+GET http://localhost:8010/
+Content-Type: application/json
+
+###
+
+### Verificar Status de Todos os Microsserviços
+GET http://localhost:8010/status
+Content-Type: application/json
+
+###
+
+### Fazer Reserva - Exemplo Básico (LAB-01)
+POST http://localhost:8010/reservar
+Content-Type: application/json
+
+{
+  "sala_id": "LAB-01",
+  "data": "2025-11-10",
+  "hora_inicio": "19:00",
+  "hora_fim": "21:00",
+  "usuario_nome": "João Silva",
+  "usuario_email": "joao@example.com"
+}
+
+###
+
+### Fazer Reserva - Sala de Reunião
+POST http://localhost:8010/reservar
+Content-Type: application/json
+
+{
+  "sala_id": "REUNIAO-01",
+  "data": "2025-11-12",
+  "hora_inicio": "14:00",
+  "hora_fim": "16:00",
+  "usuario_nome": "Maria Santos",
+  "usuario_email": "maria.santos@example.com"
+}
+
+###
+
+### Fazer Reserva - Auditório
+POST http://localhost:8010/reservar
+Content-Type: application/json
+
+{
+  "sala_id": "AUDITORIO",
+  "data": "2025-11-15",
+  "hora_inicio": "09:00",
+  "hora_fim": "12:00",
+  "usuario_nome": "Carlos Oliveira",
+  "usuario_email": "carlos@example.com"
+}
+
+###
+
+### Teste de Erro - Sala Inexistente
+POST http://localhost:8010/reservar
+Content-Type: application/json
+
+{
+  "sala_id": "SALA-999",
+  "data": "2025-11-10",
+  "hora_inicio": "10:00",
+  "hora_fim": "12:00",
+  "usuario_nome": "Teste Erro",
+  "usuario_email": "teste@example.com"
+}
+
+###
+
+### Teste de Conflito - Horário Sobreposto
+# (Execute após fazer a primeira reserva para LAB-01 às 19:00-21:00)
+POST http://localhost:8010/reservar
+Content-Type: application/json
+
+{
+  "sala_id": "LAB-01",
+  "data": "2025-11-10",
+  "hora_inicio": "20:00",
+  "hora_fim": "22:00",
+  "usuario_nome": "Teste Conflito",
+  "usuario_email": "conflito@example.com"
+}
+
+###
+
+### Reserva Manhã - LAB-02
+POST http://localhost:8010/reservar
+Content-Type: application/json
+
+{
+  "sala_id": "LAB-02",
+  "data": "2025-11-11",
+  "hora_inicio": "08:00",
+  "hora_fim": "10:00",
+  "usuario_nome": "Ana Costa",
+  "usuario_email": "ana.costa@example.com"
+}
+
+###
+
+### Reserva Tarde - LAB-03
+POST http://localhost:8010/reservar
+Content-Type: application/json
+
+{
+  "sala_id": "LAB-03",
+  "data": "2025-11-11",
+  "hora_inicio": "14:30",
+  "hora_fim": "17:30",
+  "usuario_nome": "Pedro Alves",
+  "usuario_email": "pedro.alves@example.com"
+}
+
+###
+
+### Reserva Noite - Sala Multimídia
+POST http://localhost:8010/reservar
+Content-Type: application/json
+
+{
+  "sala_id": "MULTIMIDIA-01",
+  "data": "2025-11-13",
+  "hora_inicio": "19:00",
+  "hora_fim": "21:30",
+  "usuario_nome": "Fernanda Lima",
+  "usuario_email": "fernanda@example.com"
+}
+
+###
+
+### Teste - Email Inválido (deve falhar na validação)
+POST http://localhost:8010/reservar
+Content-Type: application/json
+
+{
+  "sala_id": "LAB-01",
+  "data": "2025-11-10",
+  "hora_inicio": "10:00",
+  "hora_fim": "12:00",
+  "usuario_nome": "Teste Email",
+  "usuario_email": "email-invalido"
+}
+
+###
+
+### Teste - Dados Incompletos (deve falhar na validação)
+POST http://localhost:8010/reservar
+Content-Type: application/json
+
+{
+  "sala_id": "LAB-01",
+  "data": "2025-11-10",
+  "hora_inicio": "10:00"
+}
+
+###

@@ -1,0 +1,16 @@
+# Dependências do Gateway - Sistema de Reserva de Salas
+
+# Framework Web
+fastapi==0.104.1
+
+# Servidor ASGI
+uvicorn[standard]==0.24.0
+
+# Cliente HTTP para comunicação entre microsserviços
+requests==2.31.0
+
+# Validação de dados
+pydantic[email]==2.5.0
+
+# Variáveis de ambiente (opcional)
+python-dotenv==1.0.0
