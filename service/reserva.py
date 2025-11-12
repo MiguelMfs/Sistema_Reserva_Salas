@@ -98,5 +98,5 @@ def health():
     return {"status": "ok"}
 
 # ================== EXECUÇÃO DIRETA ==================
-if _name_ == "_main_":
-    uvicorn.run("confirmacao_service:app", host="0.0.0.0", port=8007, reload=True)
+if __name__ == "__main__":
+    uvicorn.run(app, host="0.0.0.0", port=8003, reload=False)

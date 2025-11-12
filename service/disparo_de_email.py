@@ -70,4 +70,4 @@ def disparo_de_email(dadosEmail: DadosEmail):
 
 
 if __name__ == "__main__":
-    uvicorn.run("disparo_de_email:app", host="0.0.0.0", port=8001, reload=True)
+    uvicorn.run(app, host="0.0.0.0", port=8004, reload=False)
