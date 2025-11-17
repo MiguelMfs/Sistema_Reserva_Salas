@@ -1,0 +1,20 @@
+### Health Check
+GET http://localhost:8005/
+Content-Type: application/json
+
+###
+
+### Enviar Evento de Calendário
+POST http://localhost:8005/enviar_evento
+Content-Type: application/json
+
+{
+  "email": "joao@example.com",
+  "titulo": "Reserva de Sala - LAB-01",
+  "descricao": "Reserva confirmada para a sala LAB-01 no sistema.",
+  "local": "Bloco A - Laboratório 1",
+  "data": "2025-11-10",
+  "hora_inicio": "19:00",
+  "hora_fim": "21:00",
+  "organizador": "João Silva"
+}
