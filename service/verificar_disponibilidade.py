@@ -115,5 +115,5 @@ def health():
 # Execução local
 # -------------------------------
 if __name__ == "__main__":
-    print("\n🚀 Serviço de Verificação de Disponibilidade rodando na porta 8005\n")
-    uvicorn.run(app, host="0.0.0.0", port=8005)
+    print("\n🚀 Serviço de Verificação de Disponibilidade rodando na porta 8002\n")
+    uvicorn.run(app, host="0.0.0.0", port=8002)
