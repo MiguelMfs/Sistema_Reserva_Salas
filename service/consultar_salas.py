@@ -44,5 +44,5 @@ def obter_sala_por_id(sala_id: str):
 # Inicialização local
 if __name__ == "__main__":
     import uvicorn
-    print("\n🚀 Serviço de Consulta de Salas rodando na porta 8001\n")
+    print("\n Serviço de Consulta de Salas rodando na porta 8001\n")
     uvicorn.run(app, host="0.0.0.0", port=8001)
