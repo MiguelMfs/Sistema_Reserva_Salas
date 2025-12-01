@@ -28,7 +28,7 @@ confirmacoes_db = []
 
 # ================== MODELO QUE BATE COM O GATEWAY ==================
 class ReservaEntrada(BaseModel):
-    sala_id: int
+    sala_id: str
     data: str = Field(..., description="YYYY-MM-DD")
     hora_inicio: str = Field(..., description="HH:MM")
     hora_fim: str = Field(..., description="HH:MM")

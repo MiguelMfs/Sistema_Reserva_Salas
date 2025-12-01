@@ -111,10 +111,9 @@ def verificar_disponibilidade(sala_id: str, data: str, hora_inicio: str, hora_fi
         logger.info(f"[2/5] Verificando disponibilidade da sala {sala_id} em {data} {hora_inicio}-{hora_fim}...")
         url = f"{SERVICO_VERIFICAR_DISPONIBILIDADE}/verificar"
         payload = {
-            "sala_id": sala_id,
-            "data": data,
-            "hora_inicio": hora_inicio,
-            "hora_fim": hora_fim
+            "id_sala": sala_id,
+            "inicio": f"{data} {hora_inicio}",
+            "fim": f"{data} {hora_fim}"
         }
 
         response = requests.post(url, json=payload, timeout=5)
